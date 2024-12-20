@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/af67e5362a.js" crossorigin="anonymous"></script>
+    <!-- Firebase v8 (non-modular) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo" alt="Ali Arman Logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>UI/UX Designer</p>
+                <h1>Hi, I'm <span>Ali</span><br>Arman from Bangladesh</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profile.jpg" alt="Portrait of Ali Arman">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod molestias suscipit, error nisi libero ex sunt tenetur eaque...</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app development</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Junior Designer</span><br>Designing responsive web apps</li>
+                            <li><span>Front-End Developer</span><br>Worked with JavaScript frameworks</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Bachelor's Degree</span><br>Computer Science</li>
+                            <li><span>Certifications</span><br>UI/UX and Web Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div class="service-item">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Creating intuitive and engaging user interfaces.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>Web Development</h2>
+                    <p>Building responsive and functional web applications.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Development</h2>
+                    <p>Developing seamless mobile applications for Android and iOS.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/application.jpg">
+                    <div class="layer">
+                        <h3>Social media app</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nemo.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/website.jpg">
+                    <div class="layer">
+                        <h3>Website design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nemo.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/abc.jpg">
+                    <div class="layer">
+                        <h3>Mac os development</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nemo.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Left (Form Section) -->
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <form name="contact-form"id="contact-form">
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        <textarea name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <p id="success-message" style="display: none; color: green;">Your message has been sent successfully!</p>
+                </div>
+
+                <!-- Contact Right (Social Media Links) -->
+                <div class="contact-right">
+                    <h1 class="sub-title">Follow Me</h1>
+                    <p>Feel free to reach out to me anytime via social media.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <!-- Download CV Button -->
+                    <a href="assets/cv.pdf" download class="btn download-btn">Download My CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Section -->
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 Ali Arman.<i class="fa-solid fa-heart"></i> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let tablinks = document.getElementsByClassName("tab-links");
+        let tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(event, tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // JavaScript for Menu Toggle
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.classList.add("open"); // Add the 'open' class to display the menu
+        }
+
+        function closemenu() {
+            sidemenu.classList.remove("open"); // Remove the 'open' class to hide the menu
+        }
+    </script>
+    
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyCB1NqHKTWVl5CIN0txET8UIa7zDHZCYy8",
+                authDomain: "notebot-98537.firebaseapp.com",
+                projectId: "notebot-98537",
+                storageBucket: "notebot-98537.firebasestorage.app",
+                messagingSenderId: "116585134573",
+                appId: "1:116585134573:web:ca3cb24c95e928f8444fe4",
+            };
+    
+            // Initialize Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+    
+            // Get form and form elements
+            const form = document.getElementById('contact-form');
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const messageField = document.getElementById('message');
+    
+            // Ensure form exists before adding event listener
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault(); // Prevent the default form submission
+    
+                    // Get form data
+                    const name = nameField.value;
+                    const email = emailField.value;
+                    const message = messageField.value;
+    
+                    // Simple validation
+                    if (!name || !email || !message) {
+                        alert("Please fill in all fields.");
+                        return;
+                    }
+    
+                    // Show loading message
+                    const loadingMessage = document.createElement('p');
+                    loadingMessage.textContent = 'Sending your message...';
+                    form.appendChild(loadingMessage);
+    
+                    try {
+                        // Add the contact message to Firestore
+                        await db.collection("contactMessages").add({
+                            name: name,
+                            email: email,
+                            message: message,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp() // Automatically set timestamp
+                        });
+    
+                        // Success feedback
+                        alert('Your message has been sent successfully!');
+                        loadingMessage.textContent = 'Message sent successfully!';
+    
+                        // Reset form fields
+                        form.reset();
+                    } catch (error) {
+                        // Error handling
+                        alert('Error: ' + error.message);
+                        loadingMessage.textContent = 'An error occurred while sending your message.';
+                    }
+                });
+            } else {
+                console.error('Form not found!');
+            }
+        });
+    </script>
+    
+</body>
+</html>

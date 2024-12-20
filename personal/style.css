@@ -1,0 +1,500 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+}
+
+/* Header Section */
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ff004f;
+}
+
+/* Header Text */
+.header-text {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.header-text h1 {
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+.header-text p {
+    font-size: 30px;
+}
+
+/*---------------- About Section ------------------*/
+#about {
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-col-1 {
+    flex-basis: 45%;
+    order: 1;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.about-col-2 {
+    flex-basis: 45%;
+    order: 2;
+}
+
+/* About Section Title */
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+/* Tab Links */
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-links:hover {
+    color: #ff004f;
+}
+
+/* Tab Content Styling */
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #ff004f;
+    font-size: 14px;
+}
+.tab-contents {
+    display: none;
+}
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* Show the active tab */
+.tab-contents {
+    display: none;  /* Hide all tabs by default */
+}
+
+.tab-contents.active-tab {
+    display: block;  /* Show active tab */
+}
+
+/* Highlight active tab link */
+.tab-links.active-link {
+    color: #ff004f;  /* Active link color */
+    font-weight: bold;
+}
+
+/*------------------services-----------*/
+#services {
+    padding: 30px 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+
+/*------------portfolio---------*/
+/* Portfolio Section */
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: flex; /* Use flexbox to align items in a row */
+    gap: 20px; /* Add space between images */
+    justify-content: center; /* Center align the images */
+    flex-wrap: wrap; /* Ensure the items wrap in smaller screens */
+}
+
+.work {
+    width: 300px; /* Fixed width for each image */
+    height: 200px; /* Fixed height for each image */
+    position: relative; /* Required for the overlay effect */
+    overflow: hidden; /* Prevent the image from overflowing */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.work img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Makes sure the image covers the container proportionally */
+    border-radius: inherit; /* Inherit rounded corners from the parent */
+    display: block; /* Ensure images are block level elements */
+}
+
+/* Layer for text overlay */
+.layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f); /* Fixed typo: rgba */
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s; /* Smooth opacity transition */
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover .layer {
+    opacity: 1; /* Show the overlay when hovering over the image */
+}
+
+/* Optional: Hover effect on the work item */
+.work:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    text-decoration: none;
+    color:#fff;
+    transition: background 0.5s ;
+}
+.btn:hover{
+background: #ff004f;
+}
+/*------------contact---------*/
+#contact {
+    padding: 50px 0;
+    background-color: #1c1c1c;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-left {
+    flex-basis: 48%;
+    max-width: 500px; /* Limit the width of the contact left column (form section) */
+}
+
+.contact-right {
+    flex-basis: 48%;
+    max-width: 500px; /* Limit the width of the contact right column */
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left .social-icons a {
+    font-size: 25px;
+    margin-right: 15px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.contact-left .social-icons a:hover {
+    color: #ff004f;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff004f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff1f6b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack the left and right columns vertically on smaller screens */
+    }
+    .contact-left, .contact-right {
+        flex-basis: 100%; /* Make both columns take full width on small screens */
+    }
+}
+/* Copyright Section Styling */
+footer {
+    background-color: #1f2822; /* Dark background */
+    color:#fff;            /* White text */
+    padding: 20px 0;         /* Padding for spacing */
+    text-align: center;      /* Centered text */
+    font-size: 14px;         /* Font size for copyright text */
+    position: relative;      /* For proper positioning */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style for the copyright text */
+footer p {
+    margin: 0;               /* Remove any default margin */
+}
+
+/* Optional: Style for any links inside the footer */
+footer a {
+    color: #3498db;          /* Light blue color for links */
+    text-decoration: none;   /* Remove underline from links */
+    font-weight: bold;       /* Bold font for better visibility */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+/* Love Icon in Copyright Section */
+.copyright i {
+    font-size: 18px;            /* Adjust icon size */
+    color: #ff004f;             /* Set icon color (pinkish red or theme color) */
+    margin-right: 8px;          /* Space between the icon and text */
+    vertical-align: middle;     /* Align the icon vertically with the text */
+    transition: color 0.3s ease;/* Smooth color transition on hover */
+}
+
+.copyright i:hover {
+    color: #ff6600;             /* Change icon color on hover (you can pick any color) */
+}
+/*----------------------css for small screen--------*/
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -250px; /* Initially hide off-screen */
+        width: 250px;
+        height: 100vh;
+        background: #ff004f;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding-top: 50px;
+        transition: right 0.3s ease-in-out; /* Smooth transition */
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    /* Hamburger Icon */
+    .fa-bars {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Close (Cross) Icon */
+    .fa-xmark {
+        display: none;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    /* Show close icon and hide the hamburger menu when the menu is open */
+    #sidemenu.open {
+        right: 0; /* Slide in the menu from the right */
+    }
+
+    #sidemenu.open .fa-xmark {
+        display: block;
+    }
+
+    #sidemenu.open .fa-bars {
+        display: none;
+    }
+}
